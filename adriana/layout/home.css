@@ -12,10 +12,10 @@ body {
     display: flex;
     flex-direction: column;
     background-image: url('layout/prancheta/Pattern - Adriana Turin (CMYK)_Prancheta 1.jpg');
-    background-size: cover; /* Faz a imagem cobrir todo o fundo */
-    background-repeat: no-repeat; /* Evita que a imagem se repita */
-    background-position: center; /* Centraliza a imagem no fundo */
-    background-attachment: fixed; /* Faz a imagem de fundo rolar junto com a página */
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 .navbar {
     background-color: #A9395A;
@@ -69,6 +69,7 @@ body {
     width: 100%;
     height: 100vh;
     position: relative;
+    overflow: hidden; /* Impede o overflow */
 }
 
 .swiper-slide {
@@ -96,13 +97,9 @@ body {
     transform: translateY(0);
 }
 
-.swiper-button-next,
-.swiper-button-prev {
-    color: #fff;
-}
 
 .swiper-pagination-bullet {
-    background: #007aff;
+    background: #A9395A;
 }
 
 .swiper-pagination-bullet-active {
@@ -113,13 +110,18 @@ body {
 .prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
+
 .picture {
-    flex: 0 0 150px; 
+    flex: 0 0 150px;
 }
+
 .picture img {
     width: 100%;
     height: auto;
-    border-radius: 8px; 
+    border-radius: 8px;
+    border: 2px solid #ffffff;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .painel {
@@ -132,10 +134,10 @@ body {
     box-sizing: border-box;
     gap: 20px;
     background: 
-        linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), /* Ajuste a cor e a opacidade do gradiente */
+        linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
         url('prancheta/Pattern - Adriana Turin (CMYK)_Prancheta 1.jpg');
-    background-size: cover; /* Faz com que a imagem cubra o painel */
-    background-position: center; /* Centraliza a imagem no painel */
+    background-size: cover; 
+    background-position: center;
     background-repeat: no-repeat;
 
 }
@@ -144,6 +146,8 @@ body {
     margin-bottom: 15px;
     text-align: left;
     width: 100%;
+    color: #A9395A;
+    font-weight: bold;
 }
 .painel p {
     font-size: 16px;
@@ -151,6 +155,8 @@ body {
     margin: 0;
     text-align: left;
     text-indent: 0;
+    color: #000000;
+    
 }
 .text h2 {
     font-size: 24px;
