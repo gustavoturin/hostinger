@@ -47,7 +47,7 @@
         <div class="timeline-item">
             <div class="timeline-date">2024</div>
             <div class="timeline-content">
-                <h3>Início do Projeto</h3>
+                <h3>Início</h3>
                 <p>Descrição do evento ou marco importante ocorrido em 2024.</p>
             </div>
         </div>
@@ -58,49 +58,88 @@
                 <p>Descrição do evento ou marco importante ocorrido em 2023.</p>
             </div>
         </div>
-        <!-- Adicione mais itens conforme necessário -->
     </div>
     
-    <div class="catalog-container">
-        <div class="catalog-item">
-            <img src="layout/imagem/swiper/scrapbook_1.jpg" alt="Imagem 1">
-            <div class="item-info">
-                <h3>Item 1</h3>
-                <p>Descrição detalhada sobre o Item 1.</p>
+    <div class="swiper-container">
+        <div class="swiper-wrapper catalog-container">
+            <div class="swiper-slide catalog-item">
+                <img src="layout/imagem/swiper/scrapbook_1.jpg" alt="Imagem 1">
+                <div class="item-info">
+                    <h3>Item 1</h3>
+                    <p>Descrição detalhada sobre o Item 1.</p>
+                </div>
+            </div>
+            <div class="swiper-slide catalog-item">
+                <img src="layout/imagem/swiper/Mosntro SA.jpg" alt="Imagem 2">
+                <div class="item-info">
+                    <h3>Item 2</h3>
+                    <p>Descrição detalhada sobre o Item 2.</p>
+                </div>
+            </div>
+            <div class="swiper-slide catalog-item">
+                <img src="layout/imagem/swiper/Mosntro SA.jpg" alt="Imagem 2">
+                <div class="item-info">
+                    <h3>Item 2</h3>
+                    <p>Descrição detalhada sobre o Item 2.</p>
+                </div>
+            </div>
+            <div class="swiper-slide catalog-item">
+                <img src="layout/imagem/swiper/Mosntro SA.jpg" alt="Imagem 2">
+                <div class="item-info">
+                    <h3>Item 2</h3>
+                    <p>Descrição detalhada sobre o Item 2.</p>
+                </div>
+            </div>
+            <div class="swiper-slide catalog-item">
+                <img src="layout/imagem/swiper/Mosntro SA.jpg" alt="Imagem 2">
+                <div class="item-info">
+                    <h3>Item 2</h3>
+                    <p>Descrição detalhada sobre o Item 2.</p>
+                </div>
+            </div>
+            <div class="swiper-slide catalog-item">
+                <img src="layout/imagem/swiper/Mosntro SA.jpg" alt="Imagem 2">
+                <div class="item-info">
+                    <h3>Item 2</h3>
+                    <p>Descrição detalhada sobre o Item 2.</p>
+                </div>
+            </div>
+            <div class="swiper-slide catalog-item">
+                <img src="layout/imagem/swiper/Mosntro SA.jpg" alt="Imagem 2">
+                <div class="item-info">
+                    <h3>Item 2</h3>
+                    <p>Descrição detalhada sobre o Item 2.</p>
+                </div>
             </div>
         </div>
-        <div class="catalog-item">
-            <img src="layout/imagem/swiper/Mosntro SA.jpg" alt="Imagem 2">
-            <div class="item-info">
-                <h3>Item 2</h3>
-                <p>Descrição detalhada sobre o Item 2.</p>
-            </div>
-        </div>
-        <div class="catalog-item">
-            <img src="layout/imagem/swiper/434449590_1052676679132157_4735928052172501485_n.jpg" alt="Imagem 3">
-            <div class="item-info">
-                <h3>Item 3</h3>
-                <p>Descrição detalhada sobre o Item 3.</p>
-            </div>
-        </div>
-        <!-- Adicione mais itens conforme necessário -->
     </div>
-    
+
+
     <div class="footer">
-        <p>© 2024 Adriana Turin Arte Papel - Todos os direitos reservados | Desenvolvido por Gustavo Turin</p>
+        <p>© 2024 Adriana Turin Arte em Papel - Todos os direitos reservados | Desenvolvido por Gustavo Turin</p>
     </div>
 
     <script>
-    var swiper = new Swiper('.swiper-container', {
-        loop: true,
-        effect: 'slide',
-        speed: 600,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-    });
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 3, 
+            spaceBetween: 10,
+            loop: true,
+            grabCursor: true,
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+                640: {
+                    slidesPerView: 2, 
+                    spaceBetween: 10,
+                },
+                1024: {
+                    slidesPerView: 5, 
+                    spaceBetween: 10,
+                },
+            }
+        });
     </script>
-
 </body>
 </html>
