@@ -18,6 +18,7 @@ body {
     background-position: center;
     background-attachment: fixed;
 }
+
 .navbar {
     background-color: #aa4160;
     display: flex;
@@ -25,14 +26,85 @@ body {
     justify-content: space-between;
     padding: 0 10px;
 }
-.navbar a {
+
+.logo {
+
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 70px;
+    height: auto;
+}
+
+.menu {
+    flex: 2; 
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.menu a {
     text-decoration: none;
-    display: block;
     color: #f2f2f2;
     text-align: center;
     padding: 10px 8px;
-    margin: 0 5px;   
+    margin: 0;
 }
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    z-index: 10;
+}
+
+/* Criação dos três traços */
+.menu-icon {
+    width: 30px;
+    height: 3px;
+    background: #f2f2f2;
+    position: relative;
+    transition: background 0.3s ease;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+    content: "";
+    width: 30px;
+    height: 3px;
+    background: #f2f2f2;
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-icon::before {
+    top: -10px;
+}
+
+.menu-icon::after {
+    top: 10px; 
+}
+
+.menu.open .menu-icon {
+    background: transparent;
+}
+
+.menu.open .menu-icon::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.menu.open .menu-icon::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
 .navbar a:hover {
     background-color: #ffffff8a;
     color: black;
@@ -51,10 +123,7 @@ body {
 .social-icons a:hover {
     color: #000000;
 }
-.logo img {
-    width: 70px;
-    height: auto;
-}
+
 
 .container {
     display: flex;
@@ -122,6 +191,54 @@ body {
     margin-bottom: 15px;
 }
 
+.timeline-container {
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.timeline-container h2 {
+    text-align: center;
+    color: #A9395A;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 40px;
+}
+
+.timeline-date {
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background-color: #A9395A;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.timeline-content {
+    background-color: #f0e9e6;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content h3 {
+    margin-top: 0;
+}
+
+.timeline-content p {
+    margin-bottom: 0;
+}
+
 .catalog-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -179,7 +296,7 @@ body {
 }
 
 .swiper-slide {
-    width: auto; /* Permite que o Swiper ajuste automaticamente a largura */
+    width: auto;
     height: 300px;
     display: flex;
     justify-content: center;
@@ -188,7 +305,39 @@ body {
 }
 
 .swiper-container {
-    margin-bottom: 20px; /* Adiciona espaço abaixo do Swiper */
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px; 
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    opacity: 1;
+}
+
+.swiper-button-next::after {
+    content: "\f061";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+
+.swiper-button-prev::after {
+    content: "\f060";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
 }
 
 .footer {
@@ -200,14 +349,32 @@ body {
 }
 
 @media (max-width: 768px) {
-    .navbar {
+    .menu {
+        display: none;
         flex-direction: column;
-        align-items: center;
+        width: 100%;
+        background-color: #aa4160;
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        z-index: 1;
     }
-    .social-icons {
-        justify-content: center;
-        margin-top: 10px;
+
+    .menu a {
+        padding: 15px;
+        text-align: center;
+        display: block;
     }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu.open {
+        display: flex;
+    }
+
+
     .container {
         flex-direction: column;
         align-items: center;
@@ -229,52 +396,3 @@ body {
         width: 100%;
     }
 }
-
-.timeline-container {
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 10px;
-}
-
-.timeline-container h2 {
-    text-align: center;
-    color: #A9395A;
-}
-
-.timeline-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    position: relative;
-    padding-left: 40px;
-}
-
-.timeline-date {
-    position: absolute;
-    left: 0;
-    width: 30px;
-    height: 30px;
-    background-color: #A9395A;
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-}
-
-.timeline-content {
-    background-color: #f0e9e6;
-    padding: 10px 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.timeline-content h3 {
-    margin-top: 0;
-}
-
-.timeline-content p {
-    margin-bottom: 0;
-}
-
