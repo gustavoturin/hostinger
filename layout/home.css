@@ -91,19 +91,6 @@ body {
     top: 10px; 
 }
 
-.menu.open .menu-icon {
-    background: transparent;
-}
-
-.menu.open .menu-icon::before {
-    transform: rotate(45deg);
-    top: 0;
-}
-
-.menu.open .menu-icon::after {
-    transform: rotate(-45deg);
-    top: 0;
-}
 
 .navbar a:hover {
     background-color: #ffffff8a;
@@ -374,6 +361,10 @@ body {
         display: flex;
     }
 
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
 
     .container {
         flex-direction: column;
