@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Username   = 'dados@turinarteepapel.com'; 
         $mail->Password   = '5u[QCD~w'; 
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; 
-        $mail->Port       = 993;
+        $mail->Port       = 465;
         $mail->SMTPDebug = 2;
 
         $mail->setFrom('dados@turinarteepapel.com', 'Dados - Adriana Turin Arte em Papel');
