@@ -1,0 +1,268 @@
+/* Regras gerais */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('layout/prancheta/Pattern - Adriana Turin (CMYK)_Prancheta 1.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+}
+
+/* Barra de navegação */
+.navbar {
+    background-color: #aa4160;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 70px;
+    height: auto;
+}
+
+/* Menu principal */
+.menu {
+    display: flex;
+    flex: 2; 
+    justify-content: center;
+    gap: 10px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 10px 8px;
+    margin: 0;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    z-index: 10;
+}
+
+/* Ícone do menu - três traços */
+.menu-icon {
+    width: 30px;
+    height: 3px;
+    background: #f2f2f2;
+    position: relative;
+    transition: background 0.3s ease;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+    content: "";
+    width: 30px;
+    height: 3px;
+    background: #f2f2f2;
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-icon::before {
+    top: -10px;
+}
+
+.menu-icon::after {
+    top: 10px; 
+}
+
+.navbar a:hover {
+    background-color: #ffffff8a;
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+/* Ícones sociais */
+.social-icons {
+    display: flex;
+    align-items: center;
+}
+
+.social-icons a {
+    color: #f2f2f2;
+    padding: 14px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #000000;
+}
+
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.form {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.title{
+    text-align: center;
+    width: 100%;
+    color:#000000;
+    font-size: 18px;
+    font-weight: bold;
+
+}
+
+.terms{
+    text-align: justify;
+    width: 100%;
+    color:#58595b;
+    font-size: 10px;
+}
+
+.obs{
+    text-align: justify;
+    width: 100%;
+    color:#000000;
+    font-size: 16px;
+}
+
+.formulario {
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+
+.formulario input[type="text"],
+.formulario input[type="email"],
+.formulario input[type="tel"],
+.formulario select{
+    background: #FAFAFC;
+    width: 100%;
+    padding: 0 24px;
+    margin: 6px 0;
+    border: 1px solid #E6E6F0;
+    border-radius: 8px;
+    box-sizing: border-box;
+    line-height: 26px;
+    font-size: 14px;
+    height: 56px;
+}
+
+.formulario textarea{
+    background: #FAFAFC;
+    width: 100%;
+    padding: 0 24px;
+    margin: 6px 0;
+    border: 1px solid #E6E6F0;
+    border-radius: 8px;
+    box-sizing: border-box;
+    line-height: 26px;
+    font-size: 14px;
+    height: 200px;
+}
+
+.formulario input[type="submit"] {
+    background-color: #aa4160;
+    color: white;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.formulario input[type="submit"]:hover {
+    background-color: #aa416193;
+}
+
+.form-controls {
+    text-align: center;
+}
+
+.formulario select,
+.formulario textarea {
+    resize: vertical;
+}
+
+.formulario input[type="tel"]:hover {
+    border: 2px solid #aa4160;
+}
+
+.formulario input[type="email"]:hover {
+    border: 2px solid #aa4160;
+}
+
+.formulario input[type="text"]:hover {
+    border: 2px solid #aa4160;
+}
+
+.formulario select:hover{
+    border: 2px solid #aa4160;
+}
+
+.formulario textarea:hover{
+    border: 2px solid #aa4160;
+}
+
+/* Rodapé */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+
+    .swiper-button-next, .swiper-button-prev {
+        display: none;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #aa4160;
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        z-index: 1;
+    }
+
+    .menu a {
+        padding: 15px;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
